@@ -7,9 +7,9 @@ public abstract class Tuple<T> {
 	/**
 	 * Calculate the difference between two tuples
 	 * @param tuple
-	 * 		The compared tuple 
+	 * 	The compared tuple 
 	 * @return
-	 * 		value(0~1) indicate the difference.
+	 * 	value(0~1) indicate the difference.
 	 */
 	public abstract double diff(Tuple<?> tuple);
 	

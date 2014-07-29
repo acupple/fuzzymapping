@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<weights>
+		<weight index="0" name="T1" type="String" value="0.45"/>
+		<weight index="1" name="T2" type="Number" value="0.45"/>
+		<weigth index="2" name="T3" type="IP" value="0.1" />
+	</weights>
+	<maxvalue>0.25</maxvalue>
+</configuration>

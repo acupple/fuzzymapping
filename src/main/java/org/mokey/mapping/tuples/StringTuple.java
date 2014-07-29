@@ -23,8 +23,7 @@ public class StringTuple extends Tuple<String> {
 				if(b.charAt(i) != a.charAt(i))
 					sames ++;
 			}
-		}
-		
+		}		
 		return -1.0 / (sames + 1) + 1;
 	}
 }
