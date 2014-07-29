@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 	<weights>
-		<weight index="0" name="T1" type="String" value="0.45"/>
-		<weight index="1" name="T2" type="Number" value="0.45"/>
-		<weigth index="2" name="T3" type="IP" value="0.1" />
+		<weight index="0" name="T1" type="String" value="0.35" />
+		<weight index="1" name="T2" type="Number" value="0.25"/>
+		<weight index="2" name="T3" type="String" value="0.2" />
+		<weight index="3" name="T4" type="String" value="0.1" />
+		<weight index="4" name="T5" type="String" value="0.1" />
 	</weights>
 	<maxvalue>0.25</maxvalue>
 </configuration>

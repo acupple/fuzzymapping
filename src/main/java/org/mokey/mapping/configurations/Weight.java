@@ -2,13 +2,13 @@ package org.mokey.mapping.configurations;
 
 import org.mokey.mapping.enums.TupleType;
 
-public class WeightItem {
+public class Weight {
 	private String name;
 	private TupleType type;
 	private double weight;
 	
-	public WeightItem(){}
-	public WeightItem(String name, String type, String weight){
+	public Weight(){}
+	public Weight(String name, String type, String weight){
 		this.name = name;
 		if(type.equalsIgnoreCase("number"))
 			this.type = TupleType.NUMBER;

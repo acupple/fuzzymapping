@@ -20,7 +20,7 @@ public class Mapper{
 	public List<Tuple<?>> map(List<Tuple<?>> tuples) {
 		List<Tuple<?>> result = null;
 		double minValue = Double.MAX_VALUE;
-		List<List<Tuple<?>>> lines = this.dao.getTarget();
+		List<List<Tuple<?>>> lines = this.dao.getTargetCollection(tuples);
 		Map<List<Tuple<?>>, Double> candiate = new HashMap<List<Tuple<?>>, Double>();
 		for (List<Tuple<?>> line : lines) {
 			double value = 0.0;

@@ -5,7 +5,14 @@ import java.util.List;
 import org.mokey.mapping.tuples.Tuple;
 
 public class DataAccessor {
-	public List<List<Tuple<?>>> getTarget(){
-		return null;
+	
+	private DataProvider provider;
+	
+	public DataAccessor(DataProvider provider){
+		this.provider = provider;
+	}
+	
+	public List<List<Tuple<?>>> getTargetCollection(List<Tuple<?>> res){
+		return this.provider.getTargetCollection(res);
 	}
 }
