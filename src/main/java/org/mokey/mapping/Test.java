@@ -11,8 +11,7 @@ import org.mokey.mapping.tuples.StringTuple;
 import org.mokey.mapping.tuples.Tuple;
 
 public class Test {
-	public static void main(String[] args){
-		
+	public static void main(String[] args){		
 		String[] test = {"campany","20","ford","rob","forest"};
 		List<Tuple<?>> tt = new ArrayList<Tuple<?>>();
 		for (int i = 0; i < test.length; i++) {
