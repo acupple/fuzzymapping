@@ -12,6 +12,7 @@ import org.mokey.mapping.tuples.Tuple;
 
 public class Mapper{
 	private static Logger log = Logger.getLogger("Mapper");
+	
 	private Configuration config = null;
 	private DataAccessor dao = null;
 	

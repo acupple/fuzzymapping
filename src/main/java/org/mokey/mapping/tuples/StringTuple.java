@@ -1,5 +1,7 @@
 package org.mokey.mapping.tuples;
 
+import org.mokey.mapping.utils.Helper;
+
 public class StringTuple extends Tuple<String> {
 
 	@Override
@@ -24,6 +26,6 @@ public class StringTuple extends Tuple<String> {
 					sames ++;
 			}
 		}		
-		return -1.0 / (sames + 1) + 1;
+		return Helper.y(sames);
 	}
 }

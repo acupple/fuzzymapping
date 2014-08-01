@@ -25,4 +25,11 @@ public abstract class Tuple<T> {
 	public String toString() {
 		return this.value.toString();
 	}
+	
+	@Override
+	@SuppressWarnings("unchecked")
+	public boolean equals(Object obj) {
+		Tuple<T> that = (Tuple<T>)obj;
+		return this.getValue().equals(that.getValue());
+	}
 }
