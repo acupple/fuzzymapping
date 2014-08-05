@@ -12,7 +12,7 @@ public class DataAccessor {
 		this.provider = provider;
 	}
 	
-	public List<List<Tuple<?>>> getTargetCollection(List<Tuple<?>> res){
+	public List<Tuple<?>[]> getTargetCollection(Tuple<?>[] res){
 		return this.provider.getTargetCollection(res);
 	}
 }

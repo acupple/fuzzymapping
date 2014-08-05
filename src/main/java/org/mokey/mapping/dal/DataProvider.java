@@ -12,5 +12,5 @@ public interface DataProvider {
 	 * @return
 	 * 		The target candidate collection.
 	 */
-	List<List<Tuple<?>>> getTargetCollection(List<Tuple<?>> res);
+	List<Tuple<?>[]> getTargetCollection(Tuple<?>[] res);
 }

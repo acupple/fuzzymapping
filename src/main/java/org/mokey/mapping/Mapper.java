@@ -21,30 +21,30 @@ public class Mapper{
 		this.dao = dao;
 	}
 	
-	public List<Tuple<?>> map(List<Tuple<?>> tuples) {
-		if(tuples.size() != this.config.tupleCount()){
+	public Tuple<?>[] map(Tuple<?>[] tuples) {
+		if(tuples.length != this.config.tupleCount()){
 			log.error(String.format("Count[%s, %s] of input tuples is not correct", 
-					tuples.size(), this.config.tupleCount()));
+					tuples.length, this.config.tupleCount()));
 			return null;
 		}
 		log.debug("Input tuples is :" + StringUtils.join(tuples, ","));
 		
-		List<Tuple<?>> result = null;
+		Tuple<?>[] result = null;
 		double minValue = Double.MAX_VALUE;
-		List<List<Tuple<?>>> lines = this.dao.getTargetCollection(tuples);
+		List<Tuple<?>[]> lines = this.dao.getTargetCollection(tuples);
 		
 		log.debug("Target collectiion size is: " + lines.size());
 		
-		Map<List<Tuple<?>>, Double> candiate = new HashMap<List<Tuple<?>>, Double>();
-		for (List<Tuple<?>> line : lines) {
-			if(line.size() != this.config.tupleCount()){
+		Map<Tuple<?>[], Double> candiate = new HashMap<Tuple<?>[], Double>();
+		for (Tuple<?>[] line : lines) {
+			if(line.length != this.config.tupleCount()){
 				log.error(String.format("Invalid target truples, cause: tuples count[%s, %s] not matched to the config",
-						line.size(), this.config.tupleCount()));
+						line.length, this.config.tupleCount()));
 				continue;
 			}
 			double value = 0.0;
-			for (int i = 0; i < line.size(); i++) {
-				value += line.get(i).diff(tuples.get(i)) * this.config.getWeight(i).getWeight();
+			for (int i = 0; i < line.length; i++) {
+				value += line[i].diff(tuples[i]) * this.config.getWeight(i).getWeight();
 			}
 			if(value < minValue)
 			{

@@ -13,8 +13,8 @@ import org.mokey.mapping.tuples.StringTuple;
 import org.mokey.mapping.tuples.Tuple;
 
 public class TestProvider implements DataProvider{
-	public List<List<Tuple<?>>> getTargetCollection(List<Tuple<?>> res) {
-		List<List<Tuple<?>>> result = new ArrayList<List<Tuple<?>>>();
+	public List<Tuple<?>[]> getTargetCollection(Tuple<?>[] res) {
+		List<Tuple<?>[]> result = new ArrayList<Tuple<?>[]>();
 		File file = new File(Thread.currentThread().getContextClassLoader().getResource("testdata").getFile());
 		if (file.isFile() && file.exists()){
 			try {
@@ -23,21 +23,21 @@ public class TestProvider implements DataProvider{
 				@SuppressWarnings("resource")
 				BufferedReader reader = new BufferedReader(read);
 				String line;
-				List<Tuple<?>> linetos = null;
+				Tuple<?>[] linetos = null;
 				while ((line = reader.readLine()) != null) {
 					String[] tokens = line.split(",");
 					if(tokens.length == 5){
-						linetos = new ArrayList<Tuple<?>>();
+						linetos = new Tuple<?>[tokens.length];
 						for (int i = 0; i < tokens.length; i++) {
 							if(i == 1){
 								NumberTuple ntup = new NumberTuple();
 								ntup.setValue(Integer.parseInt(tokens[i]));
-								linetos.add(ntup);
+								linetos[i] = ntup;
 								continue;
 							}
 							Tuple<String> tup = new StringTuple();
 							tup.setValue(tokens[i]);
-							linetos.add(tup);
+							linetos[i] = tup;
 						}
 						result.add(linetos);
 					}				
@@ -46,6 +46,7 @@ public class TestProvider implements DataProvider{
 				e.printStackTrace();
 			}
 		}
+		
 		return result;
 	}
 }
