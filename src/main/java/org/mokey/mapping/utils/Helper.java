@@ -5,7 +5,7 @@ public class Helper {
 	private static double n = Math.PI / 180;
 	
 	public static double y(double x){
-		return 2*Math.atan(n*x)/Math.PI;
+		return 1.0 / (1 + Math.pow(Math.E, -x));
 	}
 	
 	public static void main(String[] args){
@@ -13,6 +13,6 @@ public class Helper {
 			System.out.println(y(i));
 		}
 		
-		System.out.println(y(1000));
+		System.out.println(y(100000));
 	}
 }

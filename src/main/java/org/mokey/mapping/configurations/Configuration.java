@@ -64,8 +64,18 @@ public class Configuration {
 		return this.maxValue;
 	}
 	
+	//TODO: Fresh the new data to configuration file
+	public void setMaxValue(double val){
+		this.maxValue = val;
+	}
+	
 	public Weight getWeight(int index){
 		return this.weights[index];
+	}
+	
+	//TODO: Fresh the new data to configuration file
+	public void setWeights(Weight[] weights){
+		this.weights = weights;
 	}
 	
 	public int tupleCount(){
