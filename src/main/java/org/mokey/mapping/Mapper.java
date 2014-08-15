@@ -49,14 +49,22 @@ public class Mapper{
 			if(value < minValue)
 			{
 				minValue = value;
-				result = line;
 			}
 			if(value <= this.config.getMaxValue() && !candiate.containsKey(line))
 				candiate.put(line, value);
 			log.debug(String.format("Caculate the value of tuple[%s] is : %s", StringUtils.join(line, ","), value));
 		}
-		
-		log.debug(String.format("Final value of mapped tuple[%s] is : %s", StringUtils.join(result, ","), minValue));
+		minValue = Double.MAX_VALUE;
+		for (Tuple<?>[] tp : candiate.keySet()) {
+			if(candiate.get(tp) < minValue){
+				result = tp;
+				minValue = candiate.get(tp);
+			}
+		}
+		if(null != result)
+			log.debug(String.format("Final value of mapped tuple[%s] is : %s", StringUtils.join(result, ","), minValue));
+		else
+			log.debug("Final value of mapped tuple[%s] is : null");
 		return result;
 	}
 }
